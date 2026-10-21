@@ -65,14 +65,28 @@ class LLM_mapk(axl.Player):
         return self.execute(self.current, opponent)
 
 players = [
-    # todo : cherché des strat qui ont l'air bien pour testé
+    axl.Cooperator(),
+    axl.Defector(),
+    axl.Alternator(),
+    axl.TitForTat(),
+    axl.Grudger(),
 ]
+
 players.append(LLM_mapk())
 
-tournament = axl.Tournament(players, turns = 50, repetitions = 3, seed = 1)
-results = tournament.play(process = 1)
+tournament = axl.Tournament(players, turns=10, repetitions=1, seed=1)
+results = tournament.play()
 
-names = results.players
-order = results.ranking
+print(results.players)
+print(results.ranking)
 
-# todo : faire des résultat cool
+plot = axl.Plot(results)
+
+fig = plot.boxplot()
+fig.savefig("boxplot.png", dpi=150, bbox_inches="tight")
+
+fig = plot.payoff()
+fig.savefig("payoff.png", dpi=150, bbox_inches="tight")
+
+fig = plot.winplot()
+fig.savefig("winplot.png", dpi=150, bbox_inches="tight")
