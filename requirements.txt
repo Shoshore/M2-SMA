@@ -1,4 +1,2 @@
 axelrod==4.14.0
-matplotlib==3.10.8
-matplotlib-inline==0.2.1
 google-genai==2.32.0
