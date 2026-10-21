@@ -1,6 +1,11 @@
 import axelrod as axl
 import matplotlib.pyplot as plt
-import pandas as pd
+from google import genai
+from config import API_key
+
+client = genai.Client(api_key = API_key)
+
+
 # C Cooperate
 # D Defect
 C, D = axl.Action.C, axl.Action.D
