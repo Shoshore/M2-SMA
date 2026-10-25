@@ -12,8 +12,12 @@ using a dynamic strategy with an LLM.
 
 ## Python Version
 #### Python 3.13
+
 ## Run the code
-Install the lib with the "requirement.txt".
-Create a config.py file that contain a variable named : "API_key".
-You can obtain the API key by creating it on the website https://aistudio.google.com/api-keys.
-Than just run the "main.py" file like a any other python file.
+Install the dependencies with `pip install -r requirements.txt`.
+
+Create a file named `config.py` that contains a variable string named "API_key".
+
+This API key is a pasword to run your Google LLM, you can obtain one free by going on this [website](https://aistudio.google.com/api-keys).
+
+Then run the program `main.py`.
